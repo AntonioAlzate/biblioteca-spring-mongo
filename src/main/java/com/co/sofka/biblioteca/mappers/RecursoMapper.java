@@ -13,7 +13,7 @@ public class RecursoMapper {
     public RecursoDTO toRecursoDTO(Recurso recurso){
         RecursoDTO recursoDTO = new RecursoDTO();
         recursoDTO.setId(recurso.getId());
-        recursoDTO.setDisponibilidad(recurso.getDisponibilidad());
+        recursoDTO.setDisponibilidad(recurso.getEstaDisponible());
         recursoDTO.setFechaPrestamo(recurso.getFechaPrestamo());
         recursoDTO.setTematica(recurso.getTematica());
         recursoDTO.setTipo(recurso.getTipo());
@@ -27,7 +27,7 @@ public class RecursoMapper {
     public Recurso toRecurso(RecursoDTO recursodto){
         Recurso recurso = new Recurso();
         recurso.setId(recursodto.getId());
-        recurso.setDisponibilidad(recursodto.getDisponibilidad());
+        recurso.setEstaDisponible(recursodto.getDisponibilidad());
         recurso.setFechaPrestamo(recursodto.getFechaPrestamo());
         recurso.setTematica(recursodto.getTematica());
         recurso.setTipo(recursodto.getTipo());

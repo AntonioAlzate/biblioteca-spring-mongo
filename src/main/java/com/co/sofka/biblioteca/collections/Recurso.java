@@ -18,7 +18,7 @@ public class Recurso {
 
     private LocalDateTime fechaPrestamo;
 
-    private Boolean disponibilidad;
+    private Boolean estaDisponible;
 
     public String getId() {
         return id;
@@ -52,11 +52,11 @@ public class Recurso {
         this.fechaPrestamo = fechaPrestamo;
     }
 
-    public Boolean getDisponibilidad() {
-        return disponibilidad;
+    public Boolean getEstaDisponible() {
+        return estaDisponible;
     }
 
-    public void setDisponibilidad(Boolean disponibilidad) {
-        this.disponibilidad = disponibilidad;
+    public void setEstaDisponible(Boolean estaDisponible) {
+        this.estaDisponible = estaDisponible;
     }
 }

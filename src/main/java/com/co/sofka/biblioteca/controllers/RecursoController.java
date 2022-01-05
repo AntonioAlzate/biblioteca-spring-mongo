@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("api/v1/recurso")
@@ -40,5 +41,22 @@ public class RecursoController {
     @DeleteMapping("/{id}")
     public void eliminarRecurso(@PathVariable("id") String id){
         recursoService.eliminarRecurso(id);
+    }
+
+    @PutMapping("prestar/{id}")
+    public ResponseEntity<String> prestar(@PathVariable("id") String id){
+        return new ResponseEntity<>(recursoService.prestar(id), HttpStatus.OK);
+    }
+
+    @PutMapping("devolver/{id}")
+    public ResponseEntity<String> devolver(@PathVariable("id") String id){
+        return new ResponseEntity<>(recursoService.devolver(id), HttpStatus.OK);
+    }
+
+    @GetMapping("todos/recomendacion")
+    public ResponseEntity<List<RecursoDTO>> obtenerPorTipoYTematica
+            (@RequestParam Optional<String> tipo, @RequestParam Optional<String> tematica){
+
+        return new ResponseEntity<>(recursoService.obtenerPorTipoYTematica(tipo, tematica), HttpStatus.OK);
     }
 }
