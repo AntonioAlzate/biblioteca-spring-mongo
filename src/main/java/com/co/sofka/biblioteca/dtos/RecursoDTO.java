@@ -14,6 +14,17 @@ public class RecursoDTO {
 
     private Boolean disponibilidad;
 
+    public RecursoDTO() {
+    }
+
+    public RecursoDTO(String id, String tipo, String tematica, LocalDateTime fechaPrestamo, Boolean disponibilidad) {
+        this.id = id;
+        this.tipo = tipo;
+        this.tematica = tematica;
+        this.fechaPrestamo = fechaPrestamo;
+        this.disponibilidad = disponibilidad;
+    }
+
     public String getId() {
         return id;
     }
